@@ -1,7 +1,7 @@
 /*
  *  Copyright 2021-2021 zenghao
  */
-package com.zenghao.modules.rest;
+package com.zenghao.modules.system.rest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

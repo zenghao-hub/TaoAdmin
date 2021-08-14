@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>TaoAdmin-system</module>
+        <module>TaoAdmin-common</module>
     </modules>
 
     <parent>
