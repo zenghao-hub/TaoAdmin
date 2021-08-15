@@ -5,7 +5,8 @@ package com.zenghao.modules.system.domain.entity;
 
 import com.zenghao.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -15,8 +16,9 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
 @Entity
+@Setter
+@Getter
 @Table(name="sys_user")
 public class User extends BaseEntity {
 

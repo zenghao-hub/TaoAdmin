@@ -4,18 +4,24 @@
 package com.zenghao.base;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.Column;
+import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
-@Data
+@Getter
+@Setter
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseEntity implements Serializable {
 	private static final long serialVersionUID  = 1L;
 
@@ -32,12 +38,12 @@ public class BaseEntity implements Serializable {
 	@CreationTimestamp
 	@Column(name = "create_time", updatable = false)
 	@ApiModelProperty(value = "创建时间", hidden = true)
-	private String createTime;
+	private Timestamp createTime;
 
 	@UpdateTimestamp
 	@Column(name = "update_time")
 	@ApiModelProperty(value = "更新时间", hidden = true)
-	private String updateTime;
+	private Timestamp updateTime;
 
 	@Override
 	public String toString() {
